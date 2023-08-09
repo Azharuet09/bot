@@ -655,9 +655,13 @@ def hotel_check():
 
 
 if __name__ == '__main__':
+    host = 'ec2-34-238-120-250.compute-1.amazonaws.com'
+    port = 4000
+    app.run(host=host, port=port)
     # app.run(debug=True)
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # app.run(host='0.0.0.0', port=5000, debug=True)
     # app.run(port=8000, debug=True)
+
 
 
 """
