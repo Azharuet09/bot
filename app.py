@@ -19,7 +19,7 @@ db = client['TravelChatbot']
 hotels_collection = db['hotels']
 
 # openai.api_key = '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'
-openai.api_key = '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
+openai.api_key = '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'
 
 # Memory DF
 df = pd.read_csv("memory.csv")
