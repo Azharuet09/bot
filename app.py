@@ -23,7 +23,7 @@ hotels_collection = db['hotels']
 # openai.api_key = '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'
 # openai.api_key = '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'
 # openai.api_key = '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'
-openai.api_key = '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'
+openai.api_key = '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'
 
 # Memory DF
 df = pd.read_csv("memory.csv")
@@ -660,10 +660,10 @@ def hotel_check():
 
 
 if __name__ == '__main__':
-    # app.run()
-    host = 'ec2-3-95-218-42.compute-1.amazonaws.com'
-    port = 4000
-    app.run(host=host, port=port)
+    app.run()
+    # host = 'ec2-3-95-218-42.compute-1.amazonaws.com'
+    # port = 4000
+    # app.run(host=host, port=port)
     # app.run(debug=True)
     # app.run(host='0.0.0.0', port=5000, debug=True)
     # app.run(port=8000, debug=True)
