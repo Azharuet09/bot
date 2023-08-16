@@ -27,7 +27,7 @@ hotels_collection = db['hotels']
 
 # print('----------------API--------------------',openai_secret_key)
 
-openai.api_key = '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'
+openai.api_key = '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'
 print('----------------API--------------------',openai.api_key)
 # Memory DF
 df = pd.read_csv("memory.csv")
