@@ -22,19 +22,19 @@
         alt=""> -->
         <span
         style="font-size: 25px; font-weight: bold; color: blueviolet; margin-bottom: 10px; margin-top: 10px;"
-        >Chatbot Plugin</span>
+        >AI Chatbot</span>
     </div>
     <header class="msger-header">
       <div class="msger-header-title">
         <!-- <i class="fas fa-bug"></i> Travel Chatbot powered by Satesfy (M Talha) <i class="fas fa-bug"></i> -->
-        <i class="fas fa-bug"></i> Chatbot powered by Satesfy (M Talha) <i class="fas fa-bug"></i>
-        <!-- <form type="submit" class="reset-memory-btn">
+        <i class="fas fa-bug"></i> Chatbot powered by (AsadUllah Siddique) <i class="fas fa-bug"></i>
+        <form type="submit" class="reset-memory-btn">
           <button 
             style="padding: 10px; border-radius: 10px; background-color: violet; color: white; font-weight: bold; border: none; cursor: pointer; margin-top: 5px;"
           >
             Reset Memory
           </button>
-        </form> -->
+        </form>
       </div>
     </header>
     <main class="msger-chat">
@@ -46,7 +46,7 @@
             <div class="msg-info-time">just now</div>
           </div>
           <div class="msg-text">
-            Hi, Good to see you. Let me know which product you need?<br>
+            Hi, Good to see you. Ask me anything like (Do you have any hotel from 4 june to 11?)<br>
             <br>
           </div>
         </div>
@@ -80,7 +80,9 @@
 
     msgerForm.addEventListener("submit", event => {
       event.preventDefault();
+      
       const msgText = msgerInput.value;
+      console.log("msgText", msgText)
       if (!msgText) return;
       appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
       msgerInput.value = "";
@@ -106,8 +108,8 @@
     function botResponse(rawText) {
       // Bot Response
       $.get("/chat", { msg: rawText }).done(function (data) {
-        // console.log(rawText);
-        // console.log(data);
+        console.log(rawText);
+        console.log(data);
         const msgText = data;
         appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
       });
