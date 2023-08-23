@@ -6,12 +6,9 @@ from datetime import datetime
 from pymongo import MongoClient
 import pandas as pd
 import numpy as np
-import configparser
+
 app = Flask(__name__)
 app.static_folder = 'static'
-
-config = configparser.ConfigParser()
-config.read('config.ini')
 
 # Connect to MongoDB
 client = MongoClient(
@@ -21,14 +18,8 @@ client = MongoClient(
 db = client['TravelChatbot']
 hotels_collection = db['hotels']
 
-# openai.api_key = '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'
-# openai_secret_key = config.get('openai_api_credentials', 'api_secret_key', fallback=None)
-# openai.api_key = openai_secret_key
+openai.api_key = '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'
 
-# print('----------------API--------------------',openai_secret_key)
-
-openai.api_key = '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'
-print('----------------API--------------------',openai.api_key)
 # Memory DF
 df = pd.read_csv("memory.csv")
 df.drop(['Unnamed: 0'], axis=1, inplace=True)
@@ -664,15 +655,8 @@ def hotel_check():
 
 
 if __name__ == '__main__':
-    # app.run(host='127.0.0.1', port=3000)
-    # app.run()
-    host = 'ec2-52-206-75-241.compute-1.amazonaws.com'
-    port = 4000
-    app.run(host=host, port=port)
     # app.run(debug=True)
-    # app.run(host='127.0.0.1', port=3000, debug=True)
-    # app.run(port=8000, debug=True)
-
+    app.run(port=8000, debug=True)
 
 
 """
